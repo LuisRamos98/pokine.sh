@@ -34,17 +34,33 @@ fi
 #==================================================#
 
 
+#============ Descargamos Fonts ===================#
+
+cd ./resources
+
+# FiraCode
+
+curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+
+# Meslo
+
+curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+
+# JetBrainsMono
+
+curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+
+cd ..
+
 #============ Config. Kitty =======================#
 
 # Copiamos las configuraciones de la kitty
-if ls ./resources/kitty/  > /dev/null ; then
-  dirKitty=./resources/kitty/
+if ls ./kitty/  > /dev/null ; then
+  dirKitty=./kitty/
 
-  rm ~/.config/kitty/*
-  sudo rm /root/.config/kitty/*
+  rm -rf ~/.config/kitty/*
 
-  cp -R "$dirKitty" ~/.config/kitty
-  sudo cp -R "$dirKitty" /root/.config/kitty
+  cp -R "$dirKitty" ~/.config/kitty/
 fi
 
 #==================================================#
@@ -71,15 +87,28 @@ if ls ./resources/FiraCode.zip > /dev/null ; then
 	sudo fc-cache -f -v
 fi
 
+
 ## Borramos Archivos de configuración predeterminado
 rm -rf ~/.config/nvim 2>/dev/null
 rm -rf ~/.local/share/nvim 2>/dev/null
 
 ## Clonamos repositorio de NvChad
-git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
+git clone https://github.com/NvChad/starter ~/.config/nvim 
 
 rm -rf ~/.config/nvim/.git > /dev/null
  
-nvim
+#nvim
+
+#==================================================#
+
+#================ PowerLevel10k ===================#
+
+if ls ./resources/Meslo.zip > /dev/null ; then
+	dirFont=./resources/Meslo 
+	mkdir "$dirFont" 2>/dev/null
+	unzip ./resources/Meslo.zip -d "$dirFont"
+	sudo cp -R "$dirFont" /usr/share/fonts/
+	sudo fc-cache -f -v
+fi
 
 #==================================================#
