@@ -11,22 +11,30 @@ fi
 
 # Instalamos unzip
 if ! which unzip > /dev/null ; then
-	sudo apt install unzip
+	sudo apt -y install unzip
 fi
 
 # Instalamos gcc | C compiler
 if ! which gcc > /dev/null ; then
-	sudo apt install unzip
+	sudo apt -y install unzip
 fi
 
 # Instalamos kitty
 if ! which kitty > /dev/null ; then
-	sudo apt install kitty
+	sudo apt -y install kitty
+fi
+
+# Instalamos zsh
+if ! which zsh > /dev/null ; then
+        sudo apt -y install zsh
 fi
 
 # Instalamos neovim
 if ! which nvim > /dev/null ; then
-	sudo apt install neovim
+	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+	sudo rm -rf /opt/nvim
+	sudo tar -C /opt -xzf nvim-linux64.tar.gz
+	echo 'export PATH="$PATH:/opt/nvim-linux64/bin"' >> ~/.bashrc
 fi
 
 #==================================================#
@@ -58,10 +66,43 @@ cd ..
 if ls ./kitty/  > /dev/null ; then
   dirKitty=./kitty/
 
-  rm -rf ~/.config/kitty/*
-
   cp -R "$dirKitty" ~/.config/kitty/
 fi
+
+#==================================================#
+
+#================ PowerLevel10k ===================#
+
+## Instalamos zsh
+
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
+
+## Instalamos Fonts Requerida
+
+if ls ./resources/Meslo.zip > /dev/null ; then
+	dirFont=./resources/Meslo 
+	mkdir "$dirFont" 2>/dev/null
+	unzip ./resources/Meslo.zip -d "$dirFont"
+	sudo cp -R "$dirFont" /usr/share/fonts/
+	sudo fc-cache -f -v
+fi
+
+## Instalamos PowerLevel10k
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+## Modifcamos Archivo .zshrc
+
+sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
+echo 'export PATH="$PATH:/opt/nvim-linux64/bin"' >> ~/.zshrc # Añadimos path para el nvim al nuevo .zshrc
+
+## Colocamos nuestro archivo de configuración de PowerLevel10k
+
+rm ~/.p10k.zsh  ~/.zshrc
+
+cp -r ./powerlevel10k/ ~/
+cp ./.p10k.zsh ~/ 
+cp ./.zshrc ~/
 
 #==================================================#
 
@@ -101,14 +142,9 @@ rm -rf ~/.config/nvim/.git > /dev/null
 
 #==================================================#
 
-#================ PowerLevel10k ===================#
 
-if ls ./resources/Meslo.zip > /dev/null ; then
-	dirFont=./resources/Meslo 
-	mkdir "$dirFont" 2>/dev/null
-	unzip ./resources/Meslo.zip -d "$dirFont"
-	sudo cp -R "$dirFont" /usr/share/fonts/
-	sudo fc-cache -f -v
-fi
+#============= Limpieza ===========================#
+rm -rf ./resources ./nvim-linux64.tar.gz 
 
-#==================================================#
+
+
