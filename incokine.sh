@@ -15,7 +15,7 @@ if ! which unzip > /dev/null ; then
 fi
 
 # Instalamos lsd
-if ! which unzip > /dev/null ; then
+if ! which lsd > /dev/null ; then
 	sudo apt -y install lsd 
 fi
 
@@ -26,7 +26,7 @@ fi
 
 # Instalamos gcc | C compiler
 if ! which gcc > /dev/null ; then
-	sudo apt -y install unzip
+	sudo apt -y install gcc
 fi
 
 # Instalamos kitty
