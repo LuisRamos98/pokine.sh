@@ -14,6 +14,16 @@ if ! which unzip > /dev/null ; then
 	sudo apt -y install unzip
 fi
 
+# Instalamos lsd
+if ! which unzip > /dev/null ; then
+	sudo apt -y install lsd 
+fi
+
+# Instalamos batcat
+if ! which batcat > /dev/null ; then
+	sudo apt -y install bat 
+fi
+
 # Instalamos gcc | C compiler
 if ! which gcc > /dev/null ; then
 	sudo apt -y install unzip
@@ -75,7 +85,7 @@ fi
 
 ## Instalamos zsh
 
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
+SHELL=/bin/bash sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 
 ## Instalamos Fonts Requerida
 
@@ -100,7 +110,7 @@ echo 'export PATH="$PATH:/opt/nvim-linux64/bin"' >> ~/.zshrc # Añadimos path pa
 
 rm ~/.p10k.zsh  ~/.zshrc
 
-cp -r ./powerlevel10k/ ~/
+cp -R ./powerlevel10k/ ~/
 cp ./.p10k.zsh ~/ 
 cp ./.zshrc ~/
 
