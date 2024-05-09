@@ -1,8 +1,4 @@
 #!/bin/bash
-#
-#ToDo
-# 2. Maneras de instalar lsd y batcat 
-# 4. Confirmar todo correcto.
 
 #==================================================#
 #           Instalacion de Herramientas
@@ -75,9 +71,6 @@ if  ! ls $HOME/.config/kitty &> /dev/null ; then
   mkdir $HOME/.config/kitty 
 fi
 
-kiDir=./kitty/ 
-cp -R "$kiDir/." $HOME/.config/kitty/
-
 
 
 #==================================================#
@@ -107,14 +100,16 @@ cd ..
 
 # Copiamos las configuraciones de la kitty
 if ls ./kitty/  > /dev/null ; then
-  dirKitty=./kitty/
-
-  cp -R "$dirKitty" ~/.config/.
+  kiDir=./kitty/ 
+  cp -R "$kiDir/." $HOME/.config/kitty/
 fi
 
 #==================================================#
 
 #================ PowerLevel10k ===================#
+
+## Eliminamos cualquier instalación previa existente
+sudo rm ~/.p10k.zsh  ~/.zshrc /root/.p10k /root/.zshrc
 
 ## Instalamos oh-my-zsh
 
@@ -141,8 +136,8 @@ echo 'export PATH="$PATH:/opt/nvim-linux64/bin"' >> ~/.zshrc # Añadimos path pa
 
 ## Colocamos nuestro archivo de configuración de PowerLevel10k
 
-rm ~/.p10k.zsh  ~/.zshrc
 
+mv ./powerlevel10k_ahora_si/ ./powerlevel10k/
 cp -R ./powerlevel10k/ ~/
 cp ./.p10k.zsh ~/ 
 cp ./.zshrc ~/
@@ -204,7 +199,7 @@ fi
 # PowerLevel10k
 sudo cp -R $HOME/powerlevel10k/ /root/
 sudo cp $HOME/.p10k.zsh /root/
-sudo ln -s /home/luis/.zshrc /root/.zshrc
+sudo ln -s $HOME/.zshrc /root/.zshrc
 
 # Kitty 
 sudo cp -R $HOME/.config/kitty/ /root/.config/.
