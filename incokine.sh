@@ -67,9 +67,7 @@ if ! which kitty > /dev/null ; then
 	sudo apt -y install kitty
 fi
 
-if  ! ls $HOME/.config/kitty &> /dev/null ; then
-  mkdir $HOME/.config/kitty 
-fi
+
 
 
 
@@ -99,17 +97,18 @@ cd ..
 #============ Config. Kitty =======================#
 
 # Copiamos las configuraciones de la kitty
-if ls ./kitty/  > /dev/null ; then
-  kiDir=./kitty/ 
-  cp -R "$kiDir/." $HOME/.config/kitty/
+if  ! ls $HOME/.config/kitty &> /dev/null ; then
+  mkdir $HOME/.config/kitty 
 fi
+
+kiDir=./kitty/ 
+cp -R "$kiDir/." $HOME/.config/kitty/
+
 
 #==================================================#
 
 #================ PowerLevel10k ===================#
 
-## Eliminamos cualquier instalación previa existente
-sudo rm ~/.p10k.zsh  ~/.zshrc /root/.p10k /root/.zshrc
 
 ## Instalamos oh-my-zsh
 
@@ -136,6 +135,8 @@ echo 'export PATH="$PATH:/opt/nvim-linux64/bin"' >> ~/.zshrc # Añadimos path pa
 
 ## Colocamos nuestro archivo de configuración de PowerLevel10k
 
+## Eliminamos cualquier instalación previa existente
+rm ~/.p10k.zsh  ~/.zshrc 
 
 mv ./powerlevel10k_ahora_si/ ./powerlevel10k/
 cp -R ./powerlevel10k/ ~/
@@ -199,6 +200,7 @@ fi
 # PowerLevel10k
 sudo cp -R $HOME/powerlevel10k/ /root/
 sudo cp $HOME/.p10k.zsh /root/
+sudo mv /root/.zshrc /root/.zshrc.bak 
 sudo ln -s $HOME/.zshrc /root/.zshrc
 
 # Kitty 
