@@ -68,9 +68,6 @@ if ! which kitty > /dev/null ; then
 fi
 
 
-
-
-
 #==================================================#
 #              Configuraciones
 #==================================================#
@@ -82,15 +79,19 @@ cd ./resources
 
 # FiraCode
 
-curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
 
 # Meslo
 
-curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Meslo.zip
 
 # JetBrainsMono
 
-curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
+
+# Hack
+
+curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip
 
 cd ..
 
@@ -120,6 +121,14 @@ if ls ./resources/Meslo.zip > /dev/null ; then
 	dirFont=./resources/Meslo 
 	mkdir "$dirFont" 2>/dev/null
 	unzip ./resources/Meslo.zip -d "$dirFont"
+	sudo cp -R "$dirFont" /usr/share/fonts/
+	sudo fc-cache -f -v
+fi
+
+if ls ./resources/Hack.zip > /dev/null ; then
+	dirFont=./resources/Hack 
+	mkdir "$dirFont" 2>/dev/null
+	unzip ./resources/Hack.zip -d "$dirFont"
 	sudo cp -R "$dirFont" /usr/share/fonts/
 	sudo fc-cache -f -v
 fi
