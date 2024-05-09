@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+#ToDo
+# 2. Maneras de instalar lsd y batcat 
+# 4. Confirmar todo correcto.
 
 #==================================================#
 #           Instalacion de Herramientas
@@ -8,6 +12,24 @@
 if ! ls ./resources &> /dev/null ; then
 	mkdir resources
 fi
+
+sudo apt -y update
+
+
+# Instalamos which
+if ! command -v which > /dev/null ; then
+  sudo apt -y install which
+fi
+
+# Instalamos git 
+if ! which git > /dev/null ; then
+  sudo apt -y install git 
+fi
+
+# Instalamos curl 
+if ! which curl > /dev/null ; then
+  sudo apt -y install curl
+fi 
 
 # Instalamos unzip
 if ! which unzip > /dev/null ; then
@@ -29,10 +51,6 @@ if ! which gcc > /dev/null ; then
 	sudo apt -y install gcc
 fi
 
-# Instalamos kitty
-if ! which kitty > /dev/null ; then
-	sudo apt -y install kitty
-fi
 
 # Instalamos zsh
 if ! which zsh > /dev/null ; then
@@ -46,6 +64,21 @@ if ! which nvim > /dev/null ; then
 	sudo tar -C /opt -xzf nvim-linux64.tar.gz
 	echo 'export PATH="$PATH:/opt/nvim-linux64/bin"' >> ~/.bashrc
 fi
+
+# Instalamos kitty
+
+if ! which kitty > /dev/null ; then
+	sudo apt -y install kitty
+fi
+
+if  ! ls $HOME/.config/kitty &> /dev/null ; then
+  mkdir $HOME/.config/kitty 
+fi
+
+kiDir=./kitty/ 
+cp -R "$kiDir/." $HOME/.config/kitty/
+
+
 
 #==================================================#
 #              Configuraciones
@@ -76,14 +109,14 @@ cd ..
 if ls ./kitty/  > /dev/null ; then
   dirKitty=./kitty/
 
-  cp -R "$dirKitty" ~/.config/kitty/
+  cp -R "$dirKitty" ~/.config/.
 fi
 
 #==================================================#
 
 #================ PowerLevel10k ===================#
 
-## Instalamos zsh
+## Instalamos oh-my-zsh
 
 SHELL=/bin/bash sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 
@@ -113,6 +146,15 @@ rm ~/.p10k.zsh  ~/.zshrc
 cp -R ./powerlevel10k/ ~/
 cp ./.p10k.zsh ~/ 
 cp ./.zshrc ~/
+
+## Instalamos plugins para la zsh 
+
+sudo apt install -y zsh-syntax-highlighting
+
+sudo apt install -y zsh-autosuggestions
+
+sudo apt install -y fzf 
+sudo git clone https://github.com/joshskidmore/zsh-fzf-history-search /usr/share/zsh-fzf-history-search
 
 #==================================================#
 
@@ -153,8 +195,25 @@ rm -rf ~/.config/nvim/.git > /dev/null
 #==================================================#
 
 
+#======== Copiamos Configuraciones a root =========#
+
+if ! sudo ls /root/.config > /dev/null ; then
+  sudo mkdir /root/.config 
+fi 
+
+# PowerLevel10k
+sudo cp -R $HOME/powerlevel10k/ /root/
+sudo cp $HOME/.p10k.zsh /root/
+sudo ln -s /home/luis/.zshrc /root/.zshrc
+
+# Kitty 
+sudo cp -R $HOME/.config/kitty/ /root/.config/.
+
+# NvChad
+sudo cp -R $HOME/.config/nvim/ /root/.config/.
+
+#==================================================#
+
+
 #============= Limpieza ===========================#
 rm -rf ./resources ./nvim-linux64.tar.gz 
-
-
-
