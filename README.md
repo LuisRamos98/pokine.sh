@@ -28,7 +28,7 @@ It´s important to know this tool only work on Debian Distros like Ubuntu, Kali,
 		</tr>
 		<tr>
 			<td>Parrot OS</td>
-			<td>5.3 and later</td>
+			<td>6.0 and later</td>
 		</tr>
 	</tbody>
 </table>
