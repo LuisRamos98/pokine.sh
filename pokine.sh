@@ -10,7 +10,8 @@ if ! ls ./resources &> /dev/null ; then
 fi
 
 sudo apt -y update
-
+#removemos neovim para luego instalar su ultima versión
+sudo apt remove neovim
 
 # Instalamos which
 if ! command -v which > /dev/null ; then
