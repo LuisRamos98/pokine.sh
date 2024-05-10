@@ -1,7 +1,5 @@
 # A Tool for Easy and Fast Powerlevel10k, Kitty, Neovim (NvChad) Installation - pokine.sh
 
-<hr>
-
 <div>
 	<p align=justify>This tool is designed to save you time every time you need to set up a Debian distribution, whether it's on a virtual machine or a physical installation, and you desire both aesthetics and productivity enhancements. With just a few simple steps, you'll have everything configured and ready to use.</p>
 </div>
@@ -9,8 +7,6 @@
 <img src='https://github.com/LuisRamos98/pokine.sh/blob/main/Adjuntos/1_Final_Setup.png?raw=true' align=center>
 
 ## PRE-Requisites
-
-<hr>
 
 It´s important to know this tool only work on Debian Distros like Ubuntu, Kali, and Parrot.
 
@@ -38,8 +34,6 @@ It´s important to know this tool only work on Debian Distros like Ubuntu, Kali,
 </table>
 
 ## Installation 
-
-<hr>
 
 First, you need to clone this repo.
 
@@ -78,8 +72,6 @@ Now the script is finish.
 <img src='https://github.com/LuisRamos98/pokine.sh/blob/main/Adjuntos/4_script_finished.png?raw=true' align=center>
 
 ## Post-Instalation
-
-<hr>
 
 - Open kitty 
 
