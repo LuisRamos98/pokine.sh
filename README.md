@@ -53,6 +53,8 @@ chmod +x pokine.sh
 
 Then, execute.
 
+**Note:** DON´T EXECUTE AS ROOT.
+
 ```bash
 ./pokine.sh
 ```
