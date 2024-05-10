@@ -213,6 +213,9 @@ sudo cp $HOME/.p10k.zsh /root/
 sudo mv /root/.zshrc /root/.zshrc.bak 
 sudo ln -s $HOME/.zshrc /root/.zshrc
 
+sudo chsh -s /bin/zsh root # -> Seteamos zsh como predeterminada en root
+
+
 # Kitty 
 sudo cp -R $HOME/.config/kitty/ /root/.config/.
 
