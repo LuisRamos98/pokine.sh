@@ -6,8 +6,11 @@
 	<p align=justify>This tool is designed to save you time every time you need to set up a Debian distribution, whether it's on a virtual machine or a physical installation, and you desire both aesthetics and productivity enhancements. With just a few simple steps, you'll have everything configured and ready to use.</p>
 </div>
 
-![[Pasted image 20240510081429.png]]
+<img src='https://github.com/LuisRamos98/pokine.sh/blob/main/Adjuntos/1_Final_Setup.png?raw=true' align=center>
+
 ## PRE-Requisites
+
+<hr>
 
 It´s important to know this tool only work on Debian Distros like Ubuntu, Kali, and Parrot.
 
@@ -36,6 +39,8 @@ It´s important to know this tool only work on Debian Distros like Ubuntu, Kali,
 
 ## Installation 
 
+<hr>
+
 First, you need to clone this repo.
 
 ```bash
@@ -62,21 +67,23 @@ Then, execute.
 
 - Press \<Enter\> 
 
-![[Pasted image 20240510082021.png]]
+<img src='https://github.com/LuisRamos98/pokine.sh/blob/main/Adjuntos/2_Oh-my-zsh.png?raw=true' align=center>
 
 - Write `exit` then press \<Enter\> to continue with the instalation.
 
-![[Pasted image 20240510082333.png]]
+<img src='https://github.com/LuisRamos98/pokine.sh/blob/main/Adjuntos/3_exit_zsh.png?raw=true' align=center>
 
 Now the script is finish.
 
-![[Pasted image 20240510082523.png]]
+<img src='https://github.com/LuisRamos98/pokine.sh/blob/main/Adjuntos/4_script_finished.png?raw=true' align=center>
 
 ## Post-Instalation
 
+<hr>
+
 - Open kitty 
 
-![[Pasted image 20240510082919.png]]
+<img src='https://github.com/LuisRamos98/pokine.sh/blob/main/Adjuntos/5_open_kitty.png?raw=true' align=center>
 
 The last thing you have to do is open neovim in both user and as a root.
 
@@ -84,11 +91,11 @@ The last thing you have to do is open neovim in both user and as a root.
 nvim
 ```
 
-![[Pasted image 20240510083027.png]]
+<img src='https://github.com/LuisRamos98/pokine.sh/blob/main/Adjuntos/6_nvim_root_user.png?raw=true' align=center>
 
-Then this will be autoconfigure, you have to wait until you see this.
+Then NvChad will autoconfigure and you have to wait until you see this.
 
-![[Pasted image 20240510082832.png]]
+<img src='https://github.com/LuisRamos98/pokine.sh/blob/main/Adjuntos/7_setting_nvim.png?raw=true' align=center>
 
 Then press q and finally you have to close both neovim.
 
