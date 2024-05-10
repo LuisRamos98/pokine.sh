@@ -1,0 +1,165 @@
+{
+  "main": {
+    "id": "2dc9cdeb2ceda648",
+    "type": "split",
+    "children": [
+      {
+        "id": "8af817835e800845",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0b7d9914cf161e0a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bf26db5619a3e67c",
+    "type": "split",
+    "children": [
+      {
+        "id": "c7a0ff88593e80e0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d489acfd0f86f59a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "466a6d991a99c565",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9398ceb435cb1b5f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9e971f5486b9d100",
+    "type": "split",
+    "children": [
+      {
+        "id": "25fdfe77cd48cc0d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4f1fa2a68a6b6223",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "9341cd02759a077b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "README.md.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "97f6a01d0ce4b156",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "2d70f664fe5a78bb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "0b7d9914cf161e0a",
+  "lastOpenFiles": [
+    "7_setting_nvim.png",
+    "6_nvim_root_user.png",
+    "5_open_kitty.png",
+    "4_script_finished.png",
+    "3_exit_zsh.png",
+    "1_Final_Setup.png",
+    "2_Oh-my-zsh.png",
+    "1 - Final Setup.png",
+    "Pasted image 20240510083027.png",
+    "Pasted image 20240510082919.png",
+    "Pasted image 20240510082832.png",
+    "README.md.md",
+    "Welcome.md"
+  ]
+}
