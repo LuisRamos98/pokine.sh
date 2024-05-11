@@ -98,14 +98,12 @@ cd ..
 
 #============ Config. Kitty =======================#
 
-# Copiamos las configuraciones de la kitty
-if  ! ls $HOME/.config/kitty &> /dev/null ; then
-  mkdir $HOME/.config/kitty 
+# Configuración de Kitty
+if [ ! -d "$HOME/.config/kitty" ]; then
+    mkdir -p "$HOME/.config/kitty"
 fi
 
-kiDir=./kitty/ 
-cp -R "$kiDir/*" $HOME/.config/kitty/
-
+cp -R ./kitty/* "$HOME/.config/kitty/"
 
 #==================================================#
 
