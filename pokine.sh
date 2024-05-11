@@ -104,7 +104,7 @@ if  ! ls $HOME/.config/kitty &> /dev/null ; then
 fi
 
 kiDir=./kitty/ 
-cp -R "$kiDir/." $HOME/.config/kitty/
+cp -R "$kiDir/*" $HOME/.config/kitty/
 
 
 #==================================================#
